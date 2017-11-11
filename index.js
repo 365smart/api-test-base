@@ -1,7 +1,7 @@
-import { determinePortFromConfig } from 'lib/util';
-import Api from 'lib/Api';
+const { determinePortFromConfig } = require('./lib/util');
+const Api = require('./lib/Api');
 
-export default {
+module.exports = {
     Api,
-    determinePortFromConfig
+    determinePortFromConfig,
 };
