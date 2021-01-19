@@ -15,7 +15,7 @@
     "lint:fix": "eslint --fix lib test"
   },
   "author": "Aung Oo",
-    "devDependencies": {
+  "devDependencies": {
     "babel-eslint": "^8.0.1",
     "babel-jest": "^21.2.0",
     "babel-plugin-syntax-async-functions": "^6.13.0",
