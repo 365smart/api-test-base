@@ -1,3 +1,4 @@
+import { expect, test } from '@jest/globals';
 import { determinePortFromConfig } from '../lib/util';
 
 test('get port from config.environment', async () => {
@@ -15,8 +16,8 @@ test('get port from config.environment', async () => {
 test('get port from config.programArgs', async () => {
   const config = {
     "programArgs": [
-       "-port:4445",
-       "-test::false"
+      "-port:4445",
+      "-test::false"
     ],
   };
   const port = determinePortFromConfig(config);
@@ -26,7 +27,7 @@ test('get port from config.programArgs', async () => {
 
 test('get port from config.jvmArgs', async () => {
   const config = {
-	"jvmArgs": [
+    "jvmArgs": [
       "-Dcom.rts.PRINTAPI_HOME=.",
       "-Dcom.rts.PRINTAPI_PORT=8184",
     ],

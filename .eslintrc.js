@@ -1,20 +1,30 @@
 // http://eslint.org/docs/user-guide/getting-started
 // http://eslint.org/docs/user-guide/configuring
 module.exports = {
-  parser: "babel-eslint",
+
+  // yarn add eslint @babel/core @babel/eslint-parser -D
+  // https://www.npmjs.com/package/@babel/eslint-parser
+  parser: "@babel/eslint-parser",
+  parserOptions: {
+    sourceType: "module",
+    allowImportExportEverywhere: false,
+    ecmaFeatures: {
+      globalReturn: false,
+    },
+  },
+
   env: {
     es6: true,
     node: true,
     jest: true
   },
+
   extends: "eslint:recommended",
-  parserOptions: {
-    ecmaFeatures: {
-      experimentalObjectRestSpread: true,
-    },
-    sourceType: "module"
-  },
-  plugins: ["babel"],
+
+  // yarn add @babel/eslint-plugin -D
+  // https://www.npmjs.com/package/@babel/eslint-plugin
+  plugins: ["@babel"],
+
   globals: {
     __DEV__: true
   },
@@ -26,14 +36,12 @@ module.exports = {
     quotes: ["warn", "single"],
     semi: ["warn", "always"],
 
-    // https://github.com/babel/eslint-plugin-babel
-    "generator-star-spacing": "warn",
-    "object-shorthand": "warn",
-    "arrow-parens": "off",
-    "no-await-in-loop": "warn",
-
-    "babel/new-cap": "off",
-    "babel/object-curly-spacing": ["off", "never"],
+    // https://github.com/babel/babel/tree/main/eslint/babel-eslint-plugin
+    "@babel/new-cap": "error",
+    "@babel/no-invalid-this": "error",
+    "@babel/no-unused-expressions": "error",
+    "@babel/object-curly-spacing": "error",
+    "@babel/semi": "error"
 
     // custom
     "no-unused-vars": "warn",

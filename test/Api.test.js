@@ -1,3 +1,4 @@
+import { expect, test } from '@jest/globals';
 import Api from '../lib/Api';
 
 const api = new Api('http://invalid_host');

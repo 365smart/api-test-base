@@ -1,12 +1,9 @@
+// For Babel 7: https://stackoverflow.com/a/53974035
 {
-    "presets": ["env"],
+    "presets": [
+        "@babel/preset-env"
+    ],
     "plugins": [
-        "syntax-async-functions",
-        "syntax-class-properties",
-        "syntax-trailing-function-commas",
-        "transform-class-properties",
-        "transform-object-rest-spread",
-        "transform-object-assign",
-        "transform-async-to-generator"
+        "@babel/plugin-transform-runtime"
     ]
 }
